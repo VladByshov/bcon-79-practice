@@ -179,13 +179,40 @@ function fn10(){
 // - вивести в .out-11 вміст кожного блоку. Роздільник - знак підкреслення.
 // В результаті повинно вийти так:
 //     one_3_4_two_
+// one
+// 3
+// 4
+// two
 
 document.querySelector('.b-11').onclick = fn11;
+
+function fn11(){
+  const divs11 =  document.querySelectorAll('.div-11');
+  let result = "";
+  // for (let  i = 0; i < divs11.length; i++) {
+  //     result += `${divs11[i].textContent}_`;
+  // }
+  for (const div of divs11) {
+    console.log(divs11);
+      result += div.textContent + '_';
+  }
+  return document.querySelector('.out-11').textContent = result;
+}
+
 //  Task 12
 // Кнопка .b-12 запускає функцію fn12. Функція повинна:
 // - отримати всі div.div-12
 // - перебрати їх за допомогою циклу. Звернення до div виглядає так: elem[i]
 // - застосувати до кожного elem[i].style.background = ‘orange’
+
+document.querySelector('.b-12').onclick = fn12;
+
+function fn12(){
+  const divs12 =  document.querySelectorAll('.div-12');
+  for (let  i = 0; i < divs12.length; i++) {
+      divs12[i].style.background = 'orange';
+  }
+}
 
 //  Task 13
 // За допомогою циклу привласніть всім input .i-13 value рівне:
@@ -193,14 +220,37 @@ document.querySelector('.b-11').onclick = fn11;
 // - для другого  2
 // - для третього 3
 
+const input13 = document.querySelectorAll('.i-13');
+
+for (let i = 0; i < input13.length; i++) {
+    input13[i].value = i + 1;
+}
+
 //  Task 14
 // Кнопка .b-14 запускає функцію fn14. Функція повинна:
 // - отримати всі input.i-14
 // - перебрати їх за допомогою циклу. Звернення до елемента виглядає так: elem[i]
 // - вивести в .out-14 value вибраного input
 // Перевірити, чи вибраний елемент, можна за допомогою elem[i].checked.
-
+const input14 = document.querySelectorAll('.i-14');
+const out14 = document.querySelector('.out-14');
+document.querySelector('.b-14').onclick = fn14;
+function fn14(){
+  for (let i = 0; i <= input14.length; i++) {
+    if (input14[i].checked === true) {
+      out14.textContent = input14[i].value;
+      return;
+    }
+  }
+}
 //  Task 15
 // Кнопка .b-15 запускає функцію fn15. Функція повинна виводити наступну послідовність в .out-15:
 // 10_0_9_1_8_2_7_3_6_4_5_5_4_6_3_7_2_8_1_9_0_10_
 // Підказка (10 - i) + '_' + i + '_'
+const out15 =  document.querySelector('.out-15');
+document.querySelector('.b-15').onclick = fn15;
+function fn15(){
+  for (let i = 0; i <= 10; i++) {
+      out15.textContent += (10 - i) + '_' + i + '_';
+  }
+}
