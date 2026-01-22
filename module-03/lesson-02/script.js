@@ -31,6 +31,11 @@ document.querySelector(".b-2").onclick = function () {
 // Task 4
 // Напишіть функцію fn4, яка приймає ваш рік народження та обчислює (повертає) ваш вік.
 
+document.querySelector(".b-4").onclick = () => fn4(1998);
+function fn4 (year) {
+  document.querySelector(".out-4").textContent = 2026 - year;
+}
+
 // Task 5
 // Напишіть функцію fn5, яка приймає ваше ім'я як параметр і повертає (return) кількість символів у ньому,
 // де name — прийняте як параметр ім'я. Довжину (кількість символів) можна порахувати, використовуючи властивість length.
