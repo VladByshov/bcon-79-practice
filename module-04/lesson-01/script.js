@@ -38,17 +38,51 @@ const obj5 = {
   two: 2,
 };
 
+const btn5 = document.querySelector(".b-5");
+const out5 = document.querySelector(".out-5");
+btn5.onclick = () => {
+  fn5(obj5, out5);
+};
+function fn5(obj, output) {
+  for (const key in obj) {
+    let str = `${key} ${obj[key]} <br>`;
+    output.innerHTML += str;
+  }
+  return output;
+}
+
 // Task 6
 const obj6 = {
   b: 17,
   e: 22,
 };
 
+const btn6 = document.querySelector(".b-6");
+const out6 = document.querySelector(".out-6");
+const inp61 = document.querySelector(".i-61");
+const inp62 = document.querySelector(".i-62");
+
+btn6.onclick = () => {
+  fn6(fn5);
+};
+function fn6(objKey, objValue, fn5) {
+  objKey = inp61.value;
+  objValue = inp62.value;
+  obj6[objKey] = objValue;
+  fn5(obj6, out6);
+}
+
+const result = (a, b) => {
+  a + b;
+};
+console.log(result(2, 3));
 // Task 7
 const obj7 = {
   b: 17,
   e: 22,
 };
+
+function fn7() {}
 
 // Task 8
 const obj8 = {
