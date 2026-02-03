@@ -21,6 +21,7 @@ init();
 
 form.addEventListener("submit", onFormSubmit);
 tasksList.addEventListener("click", onTasksClick);
+tasksList.addEventListener("click", onClickCheckbox);
 themeToggle.addEventListener("click", onToggleTheme);
 
 function onFormSubmit(event) {
@@ -51,6 +52,14 @@ function onTasksClick(event) {
   store.tasks = filterredTasks;
 }
 
+function onClickCheckbox(event) {
+  if (event.target.nodeName !== "INPUT") {
+    return;
+  }
+  const listItem = event.target.closest(".task-list-item");
+  listItem.querySelector("h3").classList.toggle("completed");
+  listItem.querySelector("p").classList.toggle("completed");
+}
 function onToggleTheme(event) {
   const bodyEl = event.target.closest("body");
   const isLightTheme = bodyEl.classList.contains("theme-light");
@@ -64,7 +73,10 @@ function onToggleTheme(event) {
 function createTaskMarkup(task) {
   return `
         <li class="task-list-item">
-            <button class="task-list-item-btn" data-id="${task.id}">Delete</button>
+            <div>
+            <input type="checkbox" />
+              <button class="task-list-item-btn" data-id="${task.id}">Delete</button>
+            </div>
             <h3>${task.taskName}</h3>
             <p>${task.taskDescr}</p>
         </li>
