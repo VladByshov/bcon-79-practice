@@ -50,6 +50,7 @@
   gap: 16px;
 }
 .books-item-cover {
+  height: 322px;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -102,6 +103,7 @@
   line-height: 1.5;
   color: #0b0500;
   transition: 0.15s;
+  margin-top: auto;
 
   &:hover {
     outline: 1px solid #0b0500;

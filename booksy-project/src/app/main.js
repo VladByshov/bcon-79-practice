@@ -1,3 +1,4 @@
-import { init } from "./utils/init";
+import { initCategories, initBooks } from "./utils/init";
 
-init();
+initCategories();
+initBooks();
