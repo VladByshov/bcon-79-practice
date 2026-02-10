@@ -7,7 +7,12 @@ h6,
 p {
   margin: 0;
 }
+body {
+  background: #fceee6;
+  font-family: sans-serif;
 
+  color: #0b0500;
+}
 p:last-child {
   margin-bottom: 0;
 }
@@ -25,6 +30,9 @@ a {
 
 button {
   cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  border: none;
 }
 
 img {
