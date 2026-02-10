@@ -1,1 +1,3 @@
-console.log("Notes");
+import init from "./init/init.js";
+
+init();
