@@ -21,7 +21,8 @@
   flex-direction: column;
   gap: 0px;
 }
-.sidebar-item {
+.sidebar-item:has([data-category=""]) {
+  order: -1;
 }
 .sidebar-btn {
   line-height: 1.5;
