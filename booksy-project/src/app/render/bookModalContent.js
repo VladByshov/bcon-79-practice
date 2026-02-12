@@ -1,6 +1,6 @@
 export function renderBookModalContent(bookData = {}, el) {
   const markup = `
-  <div class="book-modal-content">
+  <div class="book-modal-content" data-bookid="${bookData._id}">
     <div class="book-modal-left">
         <img
         src="${bookData.book_image}"
